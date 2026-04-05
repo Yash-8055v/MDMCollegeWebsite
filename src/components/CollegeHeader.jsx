@@ -6,7 +6,7 @@ export default function CollegeHeader({ scrolled }) {
       className={`w-full transition-all duration-500 ease-in-out overflow-hidden ${
         scrolled
           ? 'max-h-0 opacity-0 py-0'
-          : 'max-h-44 opacity-100 py-5'
+          : 'max-h-[300px] opacity-100 py-5'
       }`}
     >
       <div
@@ -19,25 +19,25 @@ export default function CollegeHeader({ scrolled }) {
           <img
             src={logo}
             alt="VCET Logo"
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white p-0.5 shadow-md"
+            className="w-14 h-14 md:w-16 md:h-16 lg:w-[68px] lg:h-[68px] rounded-full bg-white p-1 shadow-md shrink-0"
           />
-          <h1 className="text-base sm:text-lg md:text-xl font-bold text-white leading-snug uppercase tracking-wide font-jakarta drop-shadow-md">
+          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-bold text-white leading-snug uppercase tracking-wide font-jakarta drop-shadow-md">
             Vidyavardhini's College Of Engineering &amp; Technology, Vasai Road
           </h1>
         </div>
 
         {/* Marathi Title */}
-        <p className="text-sm md:text-base text-white/90 font-medium drop-shadow-sm">
+        <p className="text-base md:text-lg lg:text-[19px] text-white/90 font-medium drop-shadow-sm">
           विद्यावर्धिनीचे अभियांत्रिकी आणि तंत्रज्ञान महाविद्यालय, वसई रोड
         </p>
 
         {/* Affiliation */}
-        <p className="text-xs md:text-sm text-white/75">
+        <p className="text-sm md:text-base lg:text-[16px] text-white/85">
           (Autonomous Institute Affiliated to University of Mumbai, Approved by AICTE &amp; DTE)
         </p>
 
         {/* Accreditation */}
-        <p className="text-sm font-semibold text-yellow-300 tracking-wide drop-shadow-sm">
+        <p className="text-base md:text-[17px] font-bold text-yellow-300 tracking-wide drop-shadow-sm">
           NBA &amp; NAAC Accredited
         </p>
       </div>
