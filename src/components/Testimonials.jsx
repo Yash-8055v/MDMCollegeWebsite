@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useEffect } from 'react';
 import t1 from '../assets/testimonials/1-1.jpg';
 import t2 from '../assets/testimonials/2-1.jpg';
 import t3 from '../assets/testimonials/2-2.jpg';
@@ -32,63 +32,76 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const innerRef = useRef(null);
+  const animRef = useRef(null);
+  const posRef = useRef(0);
 
-  // Show 3 on desktop, 1 on mobile
-  const getVisibleCount = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 768) return 3;
-    }
-    return 1;
-  };
+  // Duplicate for seamless infinite loop
+  const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
-  const maxIndex = Math.max(0, testimonials.length - getVisibleCount());
+  useEffect(() => {
+    const inner = innerRef.current;
+    if (!inner) return;
 
-  const prev = () => setCurrentIndex((i) => Math.max(0, i - 1));
-  const next = () => setCurrentIndex((i) => Math.min(maxIndex, i + 1));
+    const speed = 0.5; // px per frame
+
+    const tick = () => {
+      posRef.current += speed;
+      // Reset seamlessly once we've moved past 1 set of testimonials
+      // Since we duplicated 3 times, we can safely reset at 1/3 of the total scroll width
+      const resetPoint = inner.scrollWidth / 3;
+      if (posRef.current >= resetPoint) {
+        posRef.current = 0;
+      }
+      inner.style.transform = `translateX(-${posRef.current}px)`;
+      animRef.current = requestAnimationFrame(tick);
+    };
+
+    animRef.current = requestAnimationFrame(tick);
+
+    const pause = () => cancelAnimationFrame(animRef.current);
+    const resume = () => { animRef.current = requestAnimationFrame(tick); };
+
+    // Pause on hover
+    inner.parentElement.addEventListener('mouseenter', pause);
+    inner.parentElement.addEventListener('mouseleave', resume);
+
+    return () => {
+      cancelAnimationFrame(animRef.current);
+      inner.parentElement?.removeEventListener('mouseenter', pause);
+      inner.parentElement?.removeEventListener('mouseleave', resume);
+    };
+  }, []);
 
   return (
-    <section className="w-full py-16 md:py-20">
+    <section className="w-full py-16 md:py-20 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
         <div className="flex items-center justify-between mb-8 md:mb-10">
           <h2 className="text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider font-jakarta">
             Testimonials
           </h2>
-          <div className="flex gap-2">
-            <button
-              onClick={prev}
-              disabled={currentIndex === 0}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-sm">chevron_left</span>
-            </button>
-            <button
-              onClick={next}
-              disabled={currentIndex >= maxIndex}
-              className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white hover:border-primary transition-all disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
-            >
-              <span className="material-symbols-outlined text-sm">chevron_right</span>
-            </button>
-          </div>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden relative">
+          {/* Fade gradients on edges for smooth entry/exit */}
+          <div className="absolute top-0 left-0 bottom-0 w-12 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+
+          {/* Inner scrolling container */}
           <div
-            className="flex transition-transform duration-500 ease-in-out gap-6 md:gap-8"
-            style={{
-              transform: `translateX(-${currentIndex * (100 / getVisibleCount() + 2)}%)`,
-            }}
+            ref={innerRef}
+            className="flex gap-6 md:gap-8 will-change-transform w-max py-2"
           >
-            {testimonials.map((t, i) => (
+            {allTestimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 shrink-0 w-full md:w-[calc(33.333%-1.5rem)]"
+                className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 shrink-0 w-[300px] md:w-[350px] lg:w-[380px]"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover bg-gray-200"
+                    className="w-12 h-12 rounded-full object-cover bg-gray-200 shrink-0"
                   />
                   <div>
                     <h5 className="font-bold text-slate-800">{t.name}</h5>

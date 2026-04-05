@@ -28,12 +28,16 @@ export default function Recruiters() {
         >
           {/* Double the logos for seamless loop */}
           {[...logos, ...logos].map((src, i) => (
-            <img
+            <div 
               key={i}
-              src={src}
-              alt="Recruiter"
-              className="h-10 md:h-12 w-auto object-contain shrink-0 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
-            />
+              className="flex items-center justify-center w-36 h-20 md:w-48 md:h-24 shrink-0 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all px-4 py-3"
+            >
+              <img
+                src={src}
+                alt="Recruiter"
+                className="w-full h-full object-contain mix-blend-multiply"
+              />
+            </div>
           ))}
         </div>
       </div>
