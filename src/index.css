@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --color-primary: #1E3A8A;
+  --color-primary-light: #2563EB;
+  --color-accent: #06B6D4;
+  --color-accent-light: #22D3EE;
+  --animate-marquee: marquee 35s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Base */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f9fafb;
+  color: #0f172a;
+}
