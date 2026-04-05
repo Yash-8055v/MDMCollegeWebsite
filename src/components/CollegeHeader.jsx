@@ -1,0 +1,57 @@
+import logo from '../assets/logo.png';
+
+export default function CollegeHeader({ scrolled }) {
+  return (
+    <div
+      className={`w-full transition-all duration-500 ease-in-out overflow-hidden ${
+        scrolled
+          ? 'max-h-0 opacity-0 py-0'
+          : 'max-h-44 opacity-100 py-5'
+      }`}
+    >
+      <div
+        className={`max-w-[1200px] mx-auto flex flex-col items-center gap-1.5 px-4 transition-transform duration-500 ${
+          scrolled ? '-translate-y-4' : 'translate-y-0'
+        }`}
+      >
+        {/* Logo + Title Row */}
+        <div className="flex items-center gap-3 justify-center">
+          <img
+            src={logo}
+            alt="VCET Logo"
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white p-0.5 shadow-md"
+          />
+          <h1 className="text-base sm:text-lg md:text-xl font-bold text-white leading-snug uppercase tracking-wide font-jakarta drop-shadow-md">
+            Vidyavardhini's College Of Engineering &amp; Technology, Vasai Road
+          </h1>
+        </div>
+
+        {/* Marathi Title */}
+        <p className="text-sm md:text-base text-white/90 font-medium drop-shadow-sm">
+          विद्यावर्धिनीचे अभियांत्रिकी आणि तंत्रज्ञान महाविद्यालय, वसई रोड
+        </p>
+
+        {/* Affiliation */}
+        <p className="text-xs md:text-sm text-white/75">
+          (Autonomous Institute Affiliated to University of Mumbai, Approved by AICTE &amp; DTE)
+        </p>
+
+        {/* Accreditation */}
+        <p className="text-sm font-semibold text-yellow-300 tracking-wide drop-shadow-sm">
+          NBA &amp; NAAC Accredited
+        </p>
+      </div>
+
+      {/* ── Separator line between title block and navbar ── */}
+      <div
+        className={`transition-all duration-500 ${
+          scrolled ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20 mt-4">
+          <div className="border-t border-white/25" />
+        </div>
+      </div>
+    </div>
+  );
+}

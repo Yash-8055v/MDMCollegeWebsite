@@ -19,7 +19,7 @@ const events = [
 
 export default function NoticesEvents() {
   return (
-    <section className="w-full -mt-20 relative z-20">
+    <section className="w-full -mt-10 relative z-20">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
         <div className="bg-white rounded-xl shadow-2xl p-6 md:p-8 border border-gray-100">
           <h2 className="text-xl md:text-2xl font-bold mb-6 text-slate-800 font-jakarta">
