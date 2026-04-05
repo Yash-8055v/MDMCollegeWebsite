@@ -1,7 +1,7 @@
 import img1 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img2 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img3 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img4 from '../assets/achievements/Devanshi-Solanki-1.jpg';
+import img2 from '../assets/achievements/Airnova-25.png';
+import img3 from '../assets/achievements/Carrom-25.png';
+import img4 from '../assets/achievements/Grant-of-patent-to-vaishali.jpg';
 
 const achievements = [
   { title: 'National Robotics Competition Winner', img: img1 },

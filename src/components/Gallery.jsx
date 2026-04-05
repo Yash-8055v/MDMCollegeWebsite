@@ -1,15 +1,15 @@
-import heroImg from '../assets/hero.jpg';
-import img1 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img2 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img3 from '../assets/achievements/Devanshi-Solanki-1.jpg';
-import img4 from '../assets/achievements/Devanshi-Solanki-1.jpg';
+import galleryImg1 from '../assets/gallery/MARATHI-BHASHA-DIWAS-GROUP-PIC--scaled-e1752914345495.jpg';
+import galleryImg2 from '../assets/gallery/9e48a27b-38f9-4179-a390-557f999d191a.jpg';
+import galleryImg3 from '../assets/gallery/IMG_4193-e1751968562696.jpg';
+import galleryImg4 from '../assets/gallery/Literati4.jpeg';
+import galleryImg5 from '../assets/gallery/Literati6.jpeg';
 
 const galleryImages = [
-  { src: heroImg, span: 'col-span-2 row-span-2 h-[300px] md:h-[400px]' },
-  { src: img1, span: 'h-[180px] md:h-[192px]' },
-  { src: img2, span: 'h-[180px] md:h-[192px]' },
-  { src: img3, span: 'h-[180px] md:h-[192px]' },
-  { src: img4, span: 'h-[180px] md:h-[192px]' },
+  { src: galleryImg1, span: 'col-span-2 row-span-2 h-[300px] md:h-[400px]' },
+  { src: galleryImg2, span: 'h-[180px] md:h-[192px]' },
+  { src: galleryImg3, span: 'h-[180px] md:h-[192px]' },
+  { src: galleryImg4, span: 'h-[180px] md:h-[192px]' },
+  { src: galleryImg5, span: 'h-[180px] md:h-[192px]' },
 ];
 
 export default function Gallery() {
