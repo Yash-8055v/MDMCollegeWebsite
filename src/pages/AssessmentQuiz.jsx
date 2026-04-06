@@ -109,10 +109,10 @@ export default function AssessmentQuiz() {
     }
   };
 
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
+
   const EndTest = () => {
-    if (window.confirm("Are you sure you want to end the test?")) {
-      navigate('/erp-dashboard');
-    }
+    setShowCompletionModal(true);
   };
 
   return (
@@ -277,6 +277,29 @@ export default function AssessmentQuiz() {
 
         </div>
       </div>
+
+      {/* Completion Modal */}
+      {showCompletionModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-shadow-grey/40 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+          <div className="bg-white rounded-xl shadow-2xl border border-thistle w-full max-w-sm overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="p-6 flex flex-col items-center text-center">
+               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4 border-4 border-green-50">
+                 <span className="material-symbols-outlined text-3xl font-bold">check</span>
+               </div>
+               <h3 className="font-bold text-shadow-grey text-lg mb-2">Online Assessment completed successfully.</h3>
+               <p className="text-sm text-blue-slate mb-6">Your answers have been submitted.</p>
+               
+               <button 
+                 onClick={() => navigate(`/online-assessment/result/${id}`)}
+                 className="w-full bg-green-500 hover:bg-green-600 text-white py-2.5 rounded-lg font-bold shadow-md shadow-green-500/20 transition-all active:scale-95"
+               >
+                 OK
+               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </ErpLayout>
   );
 }

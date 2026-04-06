@@ -5,6 +5,7 @@ import ErpDashboard from './pages/ErpDashboard';
 import OnlineAssessment from './pages/OnlineAssessment';
 import AssessmentIntro from './pages/AssessmentIntro';
 import AssessmentQuiz from './pages/AssessmentQuiz';
+import AssessmentResult from './pages/AssessmentResult';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/online-assessment" element={<OnlineAssessment />} />
         <Route path="/online-assessment/intro/:id" element={<AssessmentIntro />} />
         <Route path="/online-assessment/quiz/:id" element={<AssessmentQuiz />} />
+        <Route path="/online-assessment/result/:id" element={<AssessmentResult />} />
       </Routes>
     </Router>
   );

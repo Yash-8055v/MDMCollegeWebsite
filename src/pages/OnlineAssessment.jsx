@@ -108,7 +108,10 @@ export default function OnlineAssessment() {
                   </td>
                   <td className="px-4 py-4 text-center">
                     {item.status === 'Completed' ? (
-                      <button className="text-blue-slate hover:text-shadow-grey p-1.5 rounded-full hover:bg-thistle transition-colors" title="View Results">
+                      <button 
+                        onClick={() => navigate(`/online-assessment/result/${item.id}`)}
+                        className="text-blue-slate hover:text-shadow-grey p-1.5 rounded-full hover:bg-thistle transition-colors" title="View Results"
+                      >
                         <span className="material-symbols-outlined text-[20px]">visibility</span>
                       </button>
                     ) : (
