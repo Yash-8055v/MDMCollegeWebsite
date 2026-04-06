@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const navLinks = [
@@ -15,7 +16,7 @@ const navLinks = [
 
 const exploreLinks = [
   { label: 'Video',        icon: 'play_circle',  href: '#video' },
-  { label: 'ERP Portal',   icon: 'manage_accounts', href: '#erp' },
+  { label: 'ERP Portal',   icon: 'manage_accounts', href: '/erp' },
   { label: 'Convocation',  icon: 'school',       href: '#convocation' },
 ];
 
@@ -23,6 +24,8 @@ export default function Navbar({ scrolled }) {
   const [isOpen, setIsOpen]       = useState(false);
   const [exploreOpen, setExploreOpen] = useState(false);
   const dropRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   /* close explore dropdown on outside click */
   useEffect(() => {
@@ -39,8 +42,24 @@ export default function Navbar({ scrolled }) {
     e.preventDefault();
     setIsOpen(false);
     setExploreOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+
+    if (href.startsWith('/')) {
+      // It's a route (like /erp)
+      navigate(href);
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        // If not on homepage, navigate to homepage with hash
+        navigate(`/${href}`);
+      } else {
+        // Already on homepage, smooth scroll
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -59,7 +78,7 @@ export default function Navbar({ scrolled }) {
 
         {/* ── LEFT: Logo + Name ── */}
         <a
-          href="#home"
+          href="/#home"
           onClick={(e) => handleLinkClick(e, '#home')}
           className={`flex items-center gap-3 shrink-0 transition-all duration-500 ${
             scrolled

@@ -6,7 +6,22 @@
   --color-primary-light: #2563EB;
   --color-accent: #06B6D4;
   --color-accent-light: #22D3EE;
+  
+  /* Custom Theme Colors */
+  --color-lavender-blush: #f7ebecff;
+  --color-thistle: #ddbdd5ff;
+  --color-lilac-ash: #ac9fbbff;
+  --color-blue-slate: #59656fff;
+  --color-shadow-grey: #1d1e2cff;
+
   --animate-marquee: marquee 35s linear infinite;
+  --animate-shine: shine 1.5s ease-out infinite;
+
+  @keyframes shine {
+    100% {
+      transform: translateX(400%);
+    }
+  }
 }
 
 @keyframes marquee {
