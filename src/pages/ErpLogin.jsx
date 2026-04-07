@@ -50,7 +50,7 @@ export default function ErpLogin() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-900 flex font-jakarta overflow-hidden">
+    <div className="relative min-h-[100dvh] bg-slate-900 flex flex-col font-jakarta overflow-x-hidden max-w-[100vw]">
       {/* Dynamic Background Image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -75,19 +75,19 @@ export default function ErpLogin() {
       </Link>
 
       {/* Main Content Container */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between px-6 lg:px-24">
+      <div className="relative z-10 w-full flex-1 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20 px-4 sm:px-6 lg:px-24 py-24 pb-20 lg:py-0">
         
         {/* LEFT PANEL: Vision & Mission */}
         <div
-          className={`w-full lg:w-[55%] max-w-2xl pt-24 lg:pt-0 transition-all duration-1000 ease-out delay-100 ${
+          className={`w-full lg:w-[55%] max-w-2xl transition-all duration-1000 ease-out delay-100 ${
             mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}
         >
           <div className="mb-12">
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-snug drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-4 leading-snug drop-shadow-lg hyphens-auto break-words">
               Vidyavardhini's College Of<br className="hidden md:block"/> Engineering &amp; Technology
             </h1>
-            <div className="h-1.5 w-24 bg-cyan-400 rounded-full mt-2 lg:mt-6 shadow-[0_0_15px_rgba(34,211,238,0.6)]"></div>
+            <div className="h-1.5 w-16 md:w-24 bg-cyan-400 rounded-full mt-2 lg:mt-6 shadow-[0_0_15px_rgba(34,211,238,0.6)]"></div>
           </div>
 
           <div className="space-y-10 pr-0 lg:pr-10">
@@ -129,15 +129,15 @@ export default function ErpLogin() {
 
         {/* RIGHT PANEL: Login Form Card */}
         <div
-          className={`w-full lg:w-[400px] mt-16 lg:mt-0 transition-all duration-1000 ease-out delay-300 ${
+          className={`w-full max-w-md lg:w-[400px] mt-0 transition-all duration-1000 ease-out delay-300 relative z-20 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
           }`}
         >
-          <div className="relative backdrop-blur-2xl bg-white/10 border border-white/20 rounded-[2rem] p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/30 transition-colors duration-500">
+          <div className="relative backdrop-blur-2xl bg-white/10 border border-white/20 rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:border-white/30 transition-colors duration-500 w-full overflow-hidden sm:overflow-visible">
             {/* Glow accent */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-[50px] pointer-events-none"></div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/30 rounded-full blur-[50px] pointer-events-none z-[-1]"></div>
 
-            <div className="text-center mb-8 relative z-10">
+            <div className="text-center mb-6 sm:mb-8 relative z-10">
               <div className="inline-flex justify-center items-center w-16 h-16 rounded-full bg-white/10 mb-4 shadow-inner ring-1 ring-white/20">
                 <span className="material-symbols-outlined text-3xl text-cyan-300">lock</span>
               </div>
@@ -213,8 +213,8 @@ export default function ErpLogin() {
       </div>
 
       {/* Global Footer specifically for Login Page matching ref image */}
-      <div className="absolute bottom-0 w-full bg-black/40 backdrop-blur-md border-t border-white/10 text-white/50 text-[11px] md:text-xs py-3 px-6 lg:px-12 flex justify-between items-center z-20">
-        <div className="space-x-3">
+      <div className="fixed bottom-0 w-full bg-black/40 backdrop-blur-md border-t border-white/10 text-white/50 text-[10px] md:text-xs py-3 px-4 sm:px-6 lg:px-12 flex flex-col sm:flex-row justify-center sm:justify-between items-center z-30 gap-1 sm:gap-0">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <a href="#" className="hover:text-white transition-colors">Terms &amp; Conditions</a>
           <span className="text-white/20">|</span>
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

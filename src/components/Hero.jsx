@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap gap-10 mt-12">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-6 sm:gap-10 mt-10 sm:mt-12 text-center sm:text-left">
           <div>
             <p className="text-3xl md:text-4xl font-extrabold text-white font-jakarta">30+</p>
             <p className="text-white/70 text-sm mt-1">Years of Excellence</p>

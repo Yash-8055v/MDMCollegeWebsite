@@ -19,7 +19,7 @@ export default function ErpDashboard() {
   return (
     <ErpLayout>
       {/* Metric Cards Row */}
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
         {metrics.map((metric, idx) => (
           <div 
             key={idx} 
@@ -67,17 +67,17 @@ export default function ErpDashboard() {
           </section>
 
           {/* Bulletin Board */}
-          <section className="bg-white rounded-2xl border border-thistle shadow-sm overflow-hidden">
-              <div className="px-6 py-4 border-b border-thistle flex items-center justify-between bg-lavender-blush">
-              <h2 className="flex items-center gap-2 text-base font-bold text-shadow-grey">
+          <section className="bg-white rounded-2xl border border-thistle shadow-sm overflow-hidden min-w-0">
+              <div className="px-4 sm:px-6 py-4 border-b border-thistle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-lavender-blush">
+              <h2 className="flex items-center gap-2 text-base font-bold text-shadow-grey w-full sm:w-auto">
                 <span className="material-symbols-outlined text-blue-slate">campaign</span>
                 Bulletin Board
               </h2>
-              <div className="flex gap-2">
-                  <button className="text-xs font-semibold text-shadow-grey hover:text-white bg-white hover:bg-shadow-grey border border-thistle px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm">
+              <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+                  <button className="text-xs font-semibold text-shadow-grey hover:text-white bg-white hover:bg-shadow-grey border border-thistle px-3 py-1.5 rounded-md transition-colors flex items-center justify-center gap-1 shadow-sm flex-1 sm:flex-none">
                     <span className="material-symbols-outlined text-[14px]">visibility</span> View All
                   </button>
-                  <button className="text-xs font-semibold text-white bg-blue-slate hover:bg-shadow-grey border border-transparent px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm">
+                  <button className="text-xs font-semibold text-white bg-blue-slate hover:bg-shadow-grey border border-transparent px-3 py-1.5 rounded-md transition-colors flex items-center justify-center gap-1 shadow-sm flex-1 sm:flex-none">
                     <span className="material-symbols-outlined text-[14px]">edit_document</span> Compose
                   </button>
               </div>
@@ -95,14 +95,14 @@ export default function ErpDashboard() {
                         <span className="font-bold text-shadow-grey">{post.author}</span> shared this with <span className="font-semibold text-shadow-grey">You</span>
                       </p>
                       
-                      <div className="mt-4 p-4 rounded-xl border border-thistle bg-white shadow-sm flex items-start sm:items-center justify-between gap-4 group-hover:border-lilac-ash transition-colors">
-                        <div className="flex items-center gap-3 min-w-0">
+                      <div className="mt-4 p-4 rounded-xl border border-thistle bg-white shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group-hover:border-lilac-ash transition-colors min-w-0 line-clamp-2">
+                        <div className="flex items-center gap-3 min-w-0 w-full sm:w-auto overflow-hidden">
                           <div className="w-10 h-10 rounded-lg bg-lavender-blush text-shadow-grey flex items-center justify-center shrink-0">
                             <span className="material-symbols-outlined">description</span>
                           </div>
-                          <h4 className="font-semibold text-shadow-grey truncate">{post.title}</h4>
+                          <h4 className="font-semibold text-shadow-grey break-all line-clamp-2" style={{wordBreak: "break-word"}}>{post.title}</h4>
                         </div>
-                        <div className="flex gap-1 shrink-0">
+                        <div className="flex gap-1 shrink-0 w-full sm:w-auto justify-end mt-2 sm:mt-0">
                           <button className="p-2 text-lilac-ash hover:text-shadow-grey hover:bg-thistle rounded-lg transition-colors"><span className="material-symbols-outlined text-[20px]">download</span></button>
                           <button className="p-2 text-lilac-ash hover:text-shadow-grey hover:bg-thistle rounded-lg transition-colors"><span className="material-symbols-outlined text-[20px]">print</span></button>
                         </div>

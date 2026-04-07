@@ -85,8 +85,8 @@ export default function Departments() {
   const active = activeIdx !== null ? departments[activeIdx] : null;
 
   return (
-    <section id="departments" className="w-full py-16 md:py-24 bg-white" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
+    <section id="departments" className="w-full py-12 md:py-24 bg-white" ref={ref}>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
 
         {/* Header */}
         <div className="mb-10 md:mb-14">

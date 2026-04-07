@@ -125,7 +125,7 @@ export default function NoticesEvents() {
 
   return (
     <section className="w-full -mt-10 relative z-20">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
 
           {/* ── Section Header ── */}
@@ -142,7 +142,7 @@ export default function NoticesEvents() {
           <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
 
             {/* ════ NOTICES — auto-scroll ════ */}
-            <div className="p-6 md:p-8 flex flex-col">
+            <div className="p-4 sm:p-6 md:p-8 flex flex-col">
               {/* Column header */}
               <div className="flex items-center gap-2 mb-4 shrink-0">
                 <span className="w-3 h-3 rounded-full bg-red-500 animate-pulse" />
@@ -188,7 +188,7 @@ export default function NoticesEvents() {
             </div>
 
             {/* ════ EVENTS — manual scroll ════ */}
-            <div className="p-6 md:p-8 flex flex-col">
+            <div className="p-4 sm:p-6 md:p-8 flex flex-col">
               {/* Column header */}
               <div className="flex items-center gap-2 mb-4 shrink-0">
                 <span className="text-xl">🗓</span>
@@ -215,7 +215,7 @@ export default function NoticesEvents() {
                         <img
                           src={event.img}
                           alt={event.title}
-                          className="w-24 h-16 md:w-28 md:h-[72px] object-cover rounded-xl shrink-0 shadow-sm group-hover:shadow-md transition-shadow"
+                          className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-[72px] object-cover rounded-xl shrink-0 shadow-sm group-hover:shadow-md transition-shadow"
                         />
                         <div className="flex-1 min-w-0">
                           <span

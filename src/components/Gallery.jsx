@@ -14,8 +14,8 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="w-full bg-gray-50 py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
+    <section id="gallery" className="w-full bg-gray-50 py-16 md:py-20 overflow-x-hidden max-w-full">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="flex items-end justify-between mb-8 md:mb-10">
           <h2 className="text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider font-jakarta">
             Campus Gallery

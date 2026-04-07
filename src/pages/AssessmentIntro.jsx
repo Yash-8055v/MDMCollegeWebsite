@@ -10,13 +10,13 @@ export default function AssessmentIntro() {
     <ErpLayout>
       <div className="bg-white rounded-2xl border border-thistle shadow-sm overflow-hidden min-h-[500px] flex flex-col">
         {/* Header Title */}
-        <div className="bg-lavender-blush px-6 py-4 border-b border-thistle flex justify-between items-center">
-          <h2 className="text-xl font-bold text-blue-slate uppercase tracking-wider flex items-center gap-2">
+        <div className="bg-lavender-blush px-4 sm:px-6 py-4 border-b border-thistle flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <h2 className="text-lg sm:text-xl font-bold text-blue-slate uppercase tracking-wider flex items-center gap-2 flex-wrap">
             ACADEMIC FUNCTIONS <span className="material-symbols-outlined text-[16px]">double_arrow</span> ONLINE ASSESSMENT
           </h2>
-          <div className="text-right">
-            <p className="text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:41:20 PM</p>
-            <span className="inline-block mt-1 bg-shadow-grey text-white text-xs px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
+          <div className="text-left sm:text-right">
+            <p className="text-xs sm:text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:41:20 PM</p>
+            <span className="inline-block mt-1 bg-shadow-grey text-white text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
           </div>
         </div>
 
@@ -24,18 +24,18 @@ export default function AssessmentIntro() {
         <div className="flex flex-col md:flex-row gap-6 p-6 md:p-10 flex-1">
           
           {/* Left panel - Overview & Start Button */}
-          <div className="md:w-1/3 flex flex-col gap-8 items-center">
-            <div className="w-full bg-blue-slate text-white text-center py-2 rounded-md font-bold shadow-md">
+          <div className="md:w-1/3 flex flex-col gap-6 sm:gap-8 items-center w-full">
+            <div className="w-full bg-blue-slate text-white text-center py-2 rounded-md font-bold shadow-md text-sm sm:text-base">
               Online Assessment Overview
             </div>
 
             <button 
               onClick={() => navigate(`/online-assessment/quiz/${id}`)}
-              className="w-56 h-56 rounded-full border-4 border-green-500 flex flex-col items-center justify-center text-center transition-all hover:scale-105 hover:bg-green-50 shadow-lg group relative overflow-hidden focus:outline-none"
+              className="w-48 h-48 sm:w-56 sm:h-56 rounded-full border-4 border-green-500 flex flex-col items-center justify-center text-center transition-all hover:scale-105 hover:bg-green-50 shadow-lg group relative overflow-hidden focus:outline-none shrink-0"
             >
                <div className="absolute inset-0 bg-green-500/10 scale-0 rounded-full group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
-               <span className="text-2xl font-black text-shadow-grey mb-1 z-10 block">START</span>
-               <span className="text-sm font-semibold text-blue-slate z-10 block">Online Assessment</span>
+               <span className="text-xl sm:text-2xl font-black text-shadow-grey mb-1 z-10 block">START</span>
+               <span className="text-xs sm:text-sm font-semibold text-blue-slate z-10 block">Online Assessment</span>
             </button>
           </div>
 

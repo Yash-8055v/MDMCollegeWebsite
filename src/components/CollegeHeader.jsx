@@ -15,13 +15,13 @@ export default function CollegeHeader({ scrolled }) {
         }`}
       >
         {/* Logo + Title Row */}
-        <div className="flex items-center gap-3 justify-center">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center text-center sm:text-left">
           <img
             src={logo}
             alt="VCET Logo"
-            className="w-14 h-14 md:w-16 md:h-16 lg:w-[68px] lg:h-[68px] rounded-full bg-white p-1 shadow-md shrink-0"
+            className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-[68px] lg:h-[68px] rounded-full bg-white p-1 shadow-md shrink-0"
           />
-          <h1 className="text-lg sm:text-xl md:text-2xl lg:text-[26px] font-bold text-white leading-snug uppercase tracking-wide font-jakarta drop-shadow-md">
+          <h1 className="text-base sm:text-xl md:text-2xl lg:text-[26px] font-bold text-white leading-snug uppercase tracking-wide font-jakarta drop-shadow-md">
             Vidyavardhini's College Of Engineering &amp; Technology, Vasai Road
           </h1>
         </div>

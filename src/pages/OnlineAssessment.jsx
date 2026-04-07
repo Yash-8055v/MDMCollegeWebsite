@@ -52,16 +52,16 @@ export default function OnlineAssessment() {
       <div className="bg-white rounded-2xl border border-thistle shadow-sm overflow-hidden flex flex-col relative z-0">
         
         {/* Header */}
-        <div className="px-6 py-5 border-b border-thistle flex items-center justify-between bg-lavender-blush">
-          <h2 className="flex items-center gap-2 text-lg font-bold text-shadow-grey">
+        <div className="px-4 sm:px-6 py-4 sm:py-5 border-b border-thistle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-lavender-blush">
+          <h2 className="flex items-center gap-2 text-base sm:text-lg font-bold text-shadow-grey w-full sm:w-auto">
             <span className="material-symbols-outlined text-blue-slate">assignment</span>
             Online Assessment
           </h2>
-          <div className="flex gap-2">
-            <button className="text-xs font-semibold text-shadow-grey hover:text-white bg-white hover:bg-shadow-grey border border-thistle px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm">
+          <div className="flex gap-2 w-full sm:w-auto overflow-x-auto hide-scrollbar pb-1 sm:pb-0">
+            <button className="text-xs font-semibold text-shadow-grey hover:text-white bg-white hover:bg-shadow-grey border border-thistle px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm shrink-0">
               <span className="material-symbols-outlined text-[14px]">filter_list</span> Filter
             </button>
-            <button className="text-xs font-semibold text-white bg-blue-slate hover:bg-shadow-grey border border-transparent px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm">
+            <button className="text-xs font-semibold text-white bg-blue-slate hover:bg-shadow-grey border border-transparent px-3 py-1.5 rounded-md transition-colors flex items-center gap-1 shadow-sm shrink-0">
               <span className="material-symbols-outlined text-[14px]">download</span> Export
             </button>
           </div>

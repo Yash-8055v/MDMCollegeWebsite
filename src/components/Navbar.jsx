@@ -71,7 +71,7 @@ export default function Navbar({ scrolled }) {
       }`}
     >
       <div
-        className={`max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 flex items-center gap-6 transition-all duration-500 ${
+        className={`max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 flex items-center justify-between lg:justify-start gap-4 sm:gap-6 transition-all duration-500 ${
           scrolled ? 'py-3' : 'py-4'
         }`}
       >

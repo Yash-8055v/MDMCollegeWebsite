@@ -35,7 +35,7 @@ export default function Placements() {
 
   return (
     <section id="placements" className="w-full py-16 md:py-24" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-4">
           <div>
@@ -68,74 +68,76 @@ export default function Placements() {
         </div>
 
         {/* Bar chart timeline */}
-        <div className="pl-timeline-wrap">
-          {/* Y-axis label */}
-          <div className="pl-y-axis">
-            <span>{maxPlaced}+</span>
-            <span>{Math.round(maxPlaced / 2)}</span>
-            <span>0</span>
-          </div>
+        <div className="w-full overflow-x-auto pb-4 hide-scrollbar">
+          <div className="pl-timeline-wrap min-w-[500px] md:min-w-0">
+            {/* Y-axis label */}
+            <div className="pl-y-axis">
+              <span>{maxPlaced}+</span>
+              <span>{Math.round(maxPlaced / 2)}</span>
+              <span>0</span>
+            </div>
 
-          {/* Bars */}
-          <div className="pl-bars">
-            {yearData.map((d, i) => {
-              const pct = (d.placed / maxPlaced) * 100;
-              const isLatest = i === yearData.length - 1;
-              const isActive = activeIdx === i;
-              const delay = i * 0.12;
+            {/* Bars */}
+            <div className="pl-bars">
+              {yearData.map((d, i) => {
+                const pct = (d.placed / maxPlaced) * 100;
+                const isLatest = i === yearData.length - 1;
+                const isActive = activeIdx === i;
+                const delay = i * 0.12;
 
-              return (
-                <div
-                  key={d.year}
-                  className="pl-bar-col"
-                  onMouseEnter={() => setActiveIdx(i)}
-                  onMouseLeave={() => setActiveIdx(null)}
-                  onClick={() => setActiveIdx(isActive ? null : i)}
-                >
-                  {/* Mobile tooltip */}
-                  <div className={`pl-mobile-tip ${isActive ? 'pl-mobile-tip--show' : ''}`}>
-                    <strong>{d.placed}+</strong> placed · {d.highest} · {d.recruiters} cos.
-                  </div>
+                return (
+                  <div
+                    key={d.year}
+                    className="pl-bar-col"
+                    onMouseEnter={() => setActiveIdx(i)}
+                    onMouseLeave={() => setActiveIdx(null)}
+                    onClick={() => setActiveIdx(isActive ? null : i)}
+                  >
+                    {/* Mobile tooltip */}
+                    <div className={`pl-mobile-tip ${isActive ? 'pl-mobile-tip--show' : ''}`}>
+                      <strong>{d.placed}+</strong> placed · {d.highest} · {d.recruiters} cos.
+                    </div>
 
-                  {/* Bar */}
-                  <div className="pl-bar-track">
-                    <div
-                      className={`pl-bar ${isLatest ? 'pl-bar--accent' : ''} ${isActive ? 'pl-bar--hover' : ''}`}
-                      style={{
-                        height: visible ? `${pct}%` : '0%',
-                        transitionDelay: `${delay}s`,
-                      }}
-                    >
-                      {/* Count label on top of bar */}
-                      <span
-                        className="pl-bar-label"
+                    {/* Bar */}
+                    <div className="pl-bar-track">
+                      <div
+                        className={`pl-bar ${isLatest ? 'pl-bar--accent' : ''} ${isActive ? 'pl-bar--hover' : ''}`}
                         style={{
-                          opacity: visible ? 1 : 0,
-                          transitionDelay: `${delay + 0.5}s`,
+                          height: visible ? `${pct}%` : '0%',
+                          transitionDelay: `${delay}s`,
                         }}
                       >
-                        {d.placed}+
-                      </span>
+                        {/* Count label on top of bar */}
+                        <span
+                          className="pl-bar-label"
+                          style={{
+                            opacity: visible ? 1 : 0,
+                            transitionDelay: `${delay + 0.5}s`,
+                          }}
+                        >
+                          {d.placed}+
+                        </span>
+                      </div>
                     </div>
+
+                    {/* Year label */}
+                    <span className={`pl-year ${isLatest ? 'pl-year--accent' : ''} ${isActive ? 'pl-year--active' : ''}`}>
+                      {d.year}
+                    </span>
+
+                    {/* Growth arrow for latest */}
+                    {isLatest && (
+                      <span className="pl-latest-badge">Latest</span>
+                    )}
                   </div>
+                );
+              })}
 
-                  {/* Year label */}
-                  <span className={`pl-year ${isLatest ? 'pl-year--accent' : ''} ${isActive ? 'pl-year--active' : ''}`}>
-                    {d.year}
-                  </span>
-
-                  {/* Growth arrow for latest */}
-                  {isLatest && (
-                    <span className="pl-latest-badge">Latest</span>
-                  )}
-                </div>
-              );
-            })}
-
-            {/* Horizontal grid lines */}
-            <div className="pl-grid-line" style={{ bottom: '0%' }} />
-            <div className="pl-grid-line" style={{ bottom: '50%' }} />
-            <div className="pl-grid-line" style={{ bottom: '100%' }} />
+              {/* Horizontal grid lines */}
+              <div className="pl-grid-line" style={{ bottom: '0%' }} />
+              <div className="pl-grid-line" style={{ bottom: '50%' }} />
+              <div className="pl-grid-line" style={{ bottom: '100%' }} />
+            </div>
           </div>
         </div>
 
@@ -144,18 +146,18 @@ export default function Placements() {
           <p className="text-xs font-bold text-primary uppercase tracking-wider mb-3">
             {active.year} Highlights
           </p>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-2 gap-y-4 gap-x-2">
             <div>
-              <p className="text-2xl font-extrabold text-slate-800">{active.placed}+</p>
-              <p className="text-[11px] text-slate-400 font-semibold uppercase">Placed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-2xl font-extrabold text-slate-800">{active.highest}</p>
-              <p className="text-[11px] text-slate-400 font-semibold uppercase">Highest Pkg</p>
+              <p className="text-xl sm:text-2xl font-extrabold text-slate-800">{active.placed}+</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400 font-semibold uppercase">Placed</p>
             </div>
             <div className="text-right">
-              <p className="text-2xl font-extrabold text-slate-800">{active.recruiters}+</p>
-              <p className="text-[11px] text-slate-400 font-semibold uppercase">Recruiters</p>
+              <p className="text-xl sm:text-2xl font-extrabold text-slate-800">{active.highest}</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400 font-semibold uppercase">Highest Pkg</p>
+            </div>
+            <div className="col-span-2 text-center pt-2 border-t border-slate-100">
+              <p className="text-xl sm:text-2xl font-extrabold text-slate-800">{active.recruiters}+</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-400 font-semibold uppercase">Recruiters</p>
             </div>
           </div>
         </div>

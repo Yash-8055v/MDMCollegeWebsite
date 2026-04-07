@@ -21,7 +21,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 font-jakarta text-slate-900">
+    <div className="min-h-screen bg-gray-50 font-jakarta text-slate-900 w-full overflow-x-hidden max-w-[100vw]">
       {/* Fixed overlay header: CollegeHeader (fades out) + Navbar (becomes solid) */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <CollegeHeader scrolled={scrolled} />

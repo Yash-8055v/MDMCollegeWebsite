@@ -74,41 +74,41 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-16 md:py-20 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
+    <section className="w-full py-16 md:py-20 overflow-x-hidden max-w-full">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="flex items-center justify-between mb-8 md:mb-10">
           <h2 className="text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider font-jakarta">
             Testimonials
           </h2>
         </div>
 
-        <div className="overflow-hidden relative">
+        <div className="overflow-hidden relative w-full">
           {/* Fade gradients on edges for smooth entry/exit */}
-          <div className="absolute top-0 left-0 bottom-0 w-12 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 left-0 bottom-0 w-8 md:w-12 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-8 md:w-12 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
 
           {/* Inner scrolling container */}
           <div
             ref={innerRef}
-            className="flex gap-6 md:gap-8 will-change-transform w-max py-2"
+            className="flex gap-4 md:gap-8 will-change-transform w-max py-2"
           >
             {allTestimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 shrink-0 w-[300px] md:w-[350px] lg:w-[380px]"
+                className="bg-white p-5 md:p-8 rounded-xl shadow-sm border border-gray-100 shrink-0 w-[280px] md:w-[350px] lg:w-[380px]"
               >
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full object-cover bg-gray-200 shrink-0"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover bg-gray-200 shrink-0"
                   />
                   <div>
-                    <h5 className="font-bold text-slate-800">{t.name}</h5>
-                    <p className="text-xs text-slate-500">{t.dept}</p>
+                    <h5 className="font-bold text-slate-800 text-sm md:text-base">{t.name}</h5>
+                    <p className="text-[10px] md:text-xs text-slate-500 line-clamp-1">{t.dept}</p>
                   </div>
                 </div>
-                <p className="text-slate-600 text-sm italic leading-relaxed">
+                <p className="text-slate-600 text-xs md:text-sm italic leading-relaxed">
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </div>

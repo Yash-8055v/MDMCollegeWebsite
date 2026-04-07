@@ -119,13 +119,13 @@ export default function AssessmentQuiz() {
     <ErpLayout>
       <div className="bg-white rounded-2xl border border-thistle shadow-sm overflow-hidden min-h-[500px] flex flex-col">
         {/* Header Title */}
-        <div className="bg-lavender-blush px-6 py-4 border-b border-thistle flex justify-between items-center">
-          <h2 className="text-xl font-bold text-blue-slate uppercase tracking-wider flex items-center gap-2">
+        <div className="bg-lavender-blush px-4 sm:px-6 py-4 border-b border-thistle flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <h2 className="text-lg sm:text-xl font-bold text-blue-slate uppercase tracking-wider flex items-center gap-2 flex-wrap">
             ACADEMIC FUNCTIONS <span className="material-symbols-outlined text-[16px]">double_arrow</span> ONLINE ASSESSMENT
           </h2>
-          <div className="text-right">
-            <p className="text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:44:56 PM</p>
-            <span className="inline-block mt-1 bg-shadow-grey text-white text-xs px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
+          <div className="text-left sm:text-right">
+            <p className="text-xs sm:text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:44:56 PM</p>
+            <span className="inline-block mt-1 bg-shadow-grey text-white text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
           </div>
         </div>
 
@@ -176,20 +176,22 @@ export default function AssessmentQuiz() {
           <div className="md:w-3/4 flex flex-col border border-thistle rounded-lg overflow-hidden bg-white shadow-sm">
             
             {/* Quiz Header Info */}
-            <div className="flex justify-between items-center bg-white border-b border-thistle px-4 py-2">
-               <div className="flex items-center gap-2 bg-red-600 text-white px-3 py-1.5 rounded-full font-bold text-sm shadow-inner">
-                 <span className="material-symbols-outlined text-[18px]">timer</span>
-                 {formatTime(timeLeft)}
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white border-b border-thistle px-4 py-3 gap-3">
+               <div className="flex w-full sm:w-auto justify-between sm:justify-start items-center gap-2">
+                 <div className="flex items-center gap-2 bg-red-600 text-white px-3 py-1.5 rounded-full font-bold text-sm shadow-inner shrink-0">
+                   <span className="material-symbols-outlined text-[18px]">timer</span>
+                   {formatTime(timeLeft)}
+                 </div>
+                 <div className="bg-blue-slate text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase cursor-pointer hover:bg-shadow-grey transition-colors shrink-0">
+                   Instructions
+                 </div>
                </div>
-               <div className="bg-blue-slate text-white px-4 py-1 rounded-full text-xs font-bold uppercase cursor-pointer hover:bg-shadow-grey transition-colors">
-                 Instructions
-               </div>
-               <div className="flex gap-2">
-                 <div className="flex items-center gap-1 bg-blue-slate text-white px-3 py-1 rounded-full font-bold text-xs">
+               <div className="flex gap-2 w-full sm:w-auto overflow-x-auto hide-scrollbar pb-1 sm:pb-0 justify-start sm:justify-end">
+                 <div className="flex items-center gap-1 bg-blue-slate text-white px-3 py-1 rounded-full font-bold text-xs shrink-0">
                    <span className="material-symbols-outlined text-[14px]">flag</span>
                    Marks: 1
                  </div>
-                 <div className="flex items-center bg-blue-50/50 text-blue-slate border border-blue-200 rounded divide-x divide-blue-200 font-bold overflow-hidden cursor-pointer">
+                 <div className="flex items-center bg-blue-50/50 text-blue-slate border border-blue-200 rounded divide-x divide-blue-200 font-bold overflow-hidden cursor-pointer shrink-0">
                    <span className="px-2 py-0.5 hover:bg-blue-100 transition-colors">A+</span>
                    <span className="px-2 py-0.5 hover:bg-blue-100 transition-colors">A-</span>
                  </div>
@@ -239,17 +241,17 @@ export default function AssessmentQuiz() {
             </div>
 
             {/* Action Bar */}
-            <div className="bg-lavender-blush px-6 py-4 border-t border-thistle flex justify-between items-center flex-wrap gap-4">
-                <div className="flex gap-3">
+            <div className="bg-lavender-blush px-4 sm:px-6 py-4 border-t border-thistle flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3 w-full lg:w-auto">
                   <button 
                     onClick={handleSaveAndNext}
-                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center gap-1.5"
+                    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center justify-center gap-1.5 w-full sm:w-auto"
                   >
                     <span className="material-symbols-outlined text-[18px]">done_outline</span> Save & Next
                   </button>
                   <button 
                     onClick={handleMarkForReview}
-                    className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center gap-1.5"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center justify-center gap-1.5 w-full sm:w-auto"
                   >
                     <span className="material-symbols-outlined text-[18px]">push_pin</span> Save & Mark for review
                   </button>
@@ -259,7 +261,7 @@ export default function AssessmentQuiz() {
                         delete newOpts[currentIndex];
                         setSelectedOptions(newOpts);
                      }}
-                    className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center gap-1.5"
+                    className="bg-red-400 hover:bg-red-500 text-white px-4 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center justify-center gap-1.5 w-full sm:w-auto"
                   >
                      <span className="material-symbols-outlined text-[18px]">backspace</span> Clear Response
                   </button>
@@ -267,7 +269,7 @@ export default function AssessmentQuiz() {
                 
                 <button 
                   onClick={EndTest}
-                  className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center gap-1.5 ml-auto"
+                  className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md font-bold text-sm shadow-sm transition-colors flex items-center justify-center gap-1.5 w-full lg:w-auto mt-2 lg:mt-0"
                 >
                   <span className="material-symbols-outlined text-[18px]">stop_circle</span> End Test
                 </button>

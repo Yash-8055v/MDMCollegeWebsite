@@ -50,13 +50,13 @@ export default function AssessmentResult() {
       <div className="bg-[#f8f9fc] rounded-2xl border border-thistle shadow-sm overflow-hidden flex flex-col font-jakarta">
         
         {/* Header Title */}
-        <div className="bg-white px-6 py-4 border-b border-thistle flex justify-between items-center">
-          <h2 className="text-xl font-bold text-shadow-grey uppercase tracking-wider flex items-center gap-2">
+        <div className="bg-white px-4 sm:px-6 py-4 border-b border-thistle flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <h2 className="text-lg sm:text-xl font-bold text-shadow-grey uppercase tracking-wider flex items-center gap-2 flex-wrap">
             ACADEMIC FUNCTIONS <span className="material-symbols-outlined text-[16px]">double_arrow</span> ONLINE ASSESSMENT
           </h2>
-          <div className="text-right">
-            <p className="text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:48:20 PM</p>
-            <span className="inline-block mt-1 bg-shadow-grey text-white text-xs px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
+          <div className="text-left sm:text-right">
+            <p className="text-xs sm:text-sm font-bold text-shadow-grey uppercase">APR 06, 2026 11:48:20 PM</p>
+            <span className="inline-block mt-1 bg-shadow-grey text-white text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-md font-semibold">Current Online Assessment</span>
           </div>
         </div>
 
@@ -151,12 +151,12 @@ export default function AssessmentResult() {
           </div>
 
           {/* Answer Legend */}
-          <div className="bg-yellow-50/50 border border-yellow-200 rounded-md p-3 flex items-center gap-4 text-sm font-semibold">
+          <div className="bg-yellow-50/50 border border-yellow-200 rounded-md p-3 flex items-center flex-wrap gap-4 text-sm font-semibold">
             <span className="material-symbols-outlined text-yellow-600 text-[18px]">warning</span>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 shrink-0">
                <span className="w-3 h-3 bg-green-500 rounded-full inline-block"></span> Attended
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 shrink-0">
                <span className="w-3 h-3 bg-red-500 rounded-full inline-block"></span> Not Attended
             </div>
           </div>
