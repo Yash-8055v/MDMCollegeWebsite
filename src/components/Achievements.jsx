@@ -38,9 +38,9 @@ export default function Achievements() {
   }, [maxIndex]);
 
   return (
-    <section id="achievements" className="w-full bg-white py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20">
-        <h2 className="text-xl md:text-2xl font-bold mb-8 md:mb-10 text-slate-800 uppercase tracking-wider font-jakarta">
+    <section id="achievements" className="w-full bg-white py-10 sm:py-16 md:py-20">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-6 md:px-10 lg:px-20">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8 md:mb-10 text-slate-800 uppercase tracking-wider font-jakarta">
           Achievements
         </h2>
         

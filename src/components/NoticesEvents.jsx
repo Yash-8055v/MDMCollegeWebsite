@@ -79,7 +79,7 @@ const categoryColors = {
 };
 
 // Fixed height shared by BOTH columns — keeps them equal
-const COLUMN_H = 'h-[460px]';
+const COLUMN_H = 'h-[320px] sm:h-[380px] md:h-[460px]';
 
 export default function NoticesEvents() {
   const innerRef = useRef(null);   // ref on the inner list div (we move this)
@@ -124,16 +124,16 @@ export default function NoticesEvents() {
   const allNotices = [...notices, ...notices];
 
   return (
-    <section className="w-full -mt-10 relative z-20">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+    <section className="w-full -mt-6 sm:-mt-10 relative z-20">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-10 lg:px-20">
         <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden">
 
           {/* ── Section Header ── */}
-          <div className="px-8 pt-7 pb-4 border-b border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800 font-jakarta tracking-tight">
+          <div className="px-4 sm:px-6 md:px-8 pt-5 sm:pt-7 pb-3 sm:pb-4 border-b border-gray-100">
+            <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-slate-800 font-jakarta tracking-tight">
               📋 Notices &amp; Events
             </h2>
-            <p className="text-slate-500 text-sm mt-1">
+            <p className="text-slate-500 text-xs sm:text-sm mt-1">
               Stay up to date with the latest announcements and campus events
             </p>
           </div>

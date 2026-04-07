@@ -34,12 +34,12 @@ export default function Placements() {
   const active = activeIdx !== null ? yearData[activeIdx] : yearData[yearData.length - 1];
 
   return (
-    <section id="placements" className="w-full py-16 md:py-24" ref={ref}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+    <section id="placements" className="w-full py-10 sm:py-16 md:py-24" ref={ref}>
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-10 lg:px-20">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 md:mb-16 gap-4">
           <div>
-            <h2 className="text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider">
               Placements
             </h2>
             <p className="text-slate-400 text-sm mt-2 max-w-md">
@@ -163,7 +163,7 @@ export default function Placements() {
         </div>
 
         {/* Bottom summary strip */}
-        <div className="mt-12 flex flex-wrap gap-3 justify-center">
+        <div className="mt-8 sm:mt-12 flex flex-wrap gap-2 sm:gap-3 justify-center">
           {[
             { label: 'Highest Package', value: '₹45 LPA' },
             { label: 'Avg Package', value: '₹12 LPA' },

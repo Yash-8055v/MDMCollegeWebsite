@@ -32,20 +32,20 @@ const usefulLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative bg-[#0b1121] text-slate-300 pt-12 pb-6 font-jakarta border-t border-slate-800 overflow-hidden">
+    <footer id="contact" className="relative bg-[#0b1121] text-slate-300 pt-8 sm:pt-12 pb-4 sm:pb-6 font-jakarta border-t border-slate-800 overflow-hidden">
       {/* Decorative background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 lg:px-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 mb-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 mb-8 sm:mb-10">
           
           {/* Column 1: Info & Links (spans 4 cols on larger max-ws) */}
           <div className="md:col-span-4">
-            <h4 className="text-white text-lg font-bold mb-6 tracking-wide flex items-center gap-3">
+            <h4 className="text-white text-base sm:text-lg font-bold mb-4 sm:mb-6 tracking-wide flex items-center gap-3">
               <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
               QUICK LINKS
             </h4>
-            <ul className="space-y-4">
+            <ul className="space-y-2.5 sm:space-y-4">
               {homeLinks.map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="group flex items-center text-sm md:text-[15px] hover:text-white transition-all duration-300">
@@ -59,11 +59,11 @@ export default function Footer() {
 
           {/* Column 2: Useful Links (spans 4 cols) */}
           <div className="md:col-span-4">
-            <h4 className="text-white text-lg font-bold mb-6 tracking-wide flex items-center gap-3">
+            <h4 className="text-white text-base sm:text-lg font-bold mb-4 sm:mb-6 tracking-wide flex items-center gap-3">
               <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
               USEFUL LINKS
             </h4>
-            <ul className="space-y-4 text-sm md:text-[15px]">
+            <ul className="space-y-2.5 sm:space-y-4 text-sm md:text-[15px]">
               {usefulLinks.map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="group flex items-center hover:text-white transition-all duration-300">
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Column 3: Contact (spans 4 cols) */}
           <div className="md:col-span-4">
-            <h4 className="text-white text-lg font-bold mb-6 tracking-wide flex items-center gap-3">
+            <h4 className="text-white text-base sm:text-lg font-bold mb-4 sm:mb-6 tracking-wide flex items-center gap-3">
               <span className="w-8 h-1 bg-blue-500 rounded-full"></span>
               CONTACT US
             </h4>

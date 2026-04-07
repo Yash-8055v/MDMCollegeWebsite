@@ -74,10 +74,10 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="w-full py-16 md:py-20 overflow-x-hidden max-w-full">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+    <section className="w-full py-10 sm:py-16 md:py-20 overflow-x-hidden max-w-full">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-10 lg:px-20">
         <div className="flex items-center justify-between mb-8 md:mb-10">
-          <h2 className="text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider font-jakarta">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 uppercase tracking-wider font-jakarta">
             Testimonials
           </h2>
         </div>

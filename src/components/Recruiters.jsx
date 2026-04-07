@@ -4,9 +4,9 @@ const logos = Object.values(recruiterImages).map((mod) => mod.default);
 
 export default function Recruiters() {
   return (
-    <section className="w-full pb-16 overflow-x-hidden max-w-full">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-        <h2 className="text-xl md:text-2xl font-bold mb-8 md:mb-10 text-slate-800 uppercase tracking-wider font-jakarta">
+    <section className="w-full pb-10 sm:pb-16 overflow-x-hidden max-w-full">
+      <div className="max-w-[1200px] mx-auto px-3 sm:px-4 md:px-10 lg:px-20">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 sm:mb-8 md:mb-10 text-slate-800 uppercase tracking-wider font-jakarta">
           Our Recruiters
         </h2>
       </div>
