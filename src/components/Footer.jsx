@@ -149,7 +149,7 @@ export default function Footer() {
             © Copyright 2026 <span className="font-bold text-white tracking-wider">VCET</span> All Rights Reserved.
           </p>
           <p className="flex items-center gap-1.5 bg-slate-800/50 px-4 py-1.5 rounded-full border border-slate-700/50">
-            Designed by <span className="font-bold text-blue-400">Yash Karande</span>
+            Designed by <span className="font-bold text-blue-400">Yash & Siddhesh</span>
           </p>
         </div>
       </div>
